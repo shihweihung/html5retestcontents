@@ -1,0 +1,28 @@
+<html>
+<head>
+<script type="text/javascript">
+function removeScroll()
+{
+document.getElementById("myframe").scrolling="no";
+}
+</script>
+</head>
+<body>
+
+<iframe id="myframe" src="/default.asp" scrolling="auto">
+<p>Your browser does not support iframes.</p>
+</iframe>
+
+<p>The value of the scrolling attribute is:
+<script type="text/javascript">
+document.write(document.getElementById("myframe").scrolling);
+</script>
+<p>
+
+<input type="button" onclick="removeScroll()" value="Remove Scrollbars" />
+
+<p>Internet Explorer, Google Chrome, Opera, and Safari have problems with setting the scrolling attribute.</p>
+
+</body>
+</html>
+

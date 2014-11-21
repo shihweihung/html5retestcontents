@@ -1,0 +1,23 @@
+<html>
+<head>
+<script type="text/javascript">
+function removeBorder()
+{
+document.getElementById("myframe").frameBorder="0";
+}
+</script>
+</head>
+<body>
+
+<iframe id="myframe" src="/default.asp">
+<p>Your browser does not support iframes.</p>
+</iframe>
+<br /><br />
+
+<input type="button" onclick="removeBorder()" value="Remove border" />
+
+<p><b>Note:</b> This example does not work in Internet Explorer.</p>
+
+</body>
+</html>
+

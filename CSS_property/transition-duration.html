@@ -1,0 +1,39 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<style type="text/css"> 
+div
+{
+width:100px;
+height:100px;
+background:red;
+transition-property:width;
+transition-duration:5s;
+/* Firefox 4 */
+-moz-transition-property:width;
+-moz-transition-duration:5s;
+/* Safari and Chrome */
+-webkit-transition-property:width;
+-webkit-transition-duration:5s;
+/* Opera */
+-o-transition-property:width;
+-o-transition-duration:5s;
+}
+
+div:hover
+{
+width:300px;
+}
+</style>
+</head>
+<body>
+
+<p><b>Note:</b> This example does not work in Internet Explorer.</p>
+
+<div></div>
+
+<p>Hover over the div element above, to see the transition effect.</p>
+
+</body>
+</html>
+

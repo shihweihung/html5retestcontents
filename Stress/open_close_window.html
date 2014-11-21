@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<script>
+var tr = setInterval(function(){openWin()}, 1000);
+var myWindow;
+var count = 100;
+var num = 0;
+function openWin() {
+    myWindow = window.open("", "", "width=200, height=100");
+	myWindow.document.write("<p>I am a new window.</p>");
+	document.write(count+"\n");
+	//count++;
+	if (num <= count){
+	setInterval(function(){closeWin()}, 2000);
+	}
+	if (count == 0){
+	clearInterval(tr);
+	}
+	count--;
+}
+
+function closeWin() {
+    myWindow.close();
+}
+
+</script>
+
+
+<body onLoad="openWin()">
+</body>
+</html>

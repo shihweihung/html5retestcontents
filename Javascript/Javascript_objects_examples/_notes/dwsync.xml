@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="Use toUTCString() to convert today's date (according to UTC) to a string.html" server="ftp.powweb.com/HTML5RE/" local="130216822800000000" remote="130367769600000000" Dst="0" />
+<file name="Use setFullYear() to set a specific date.html" server="ftp.powweb.com/HTML5RE/" local="130216822800000000" remote="130367769600000000" Dst="0" />
+<file name="Use round() to round a number.html" server="ftp.powweb.com/HTML5RE/" local="130216822800000000" remote="130367769600000000" Dst="0" />
+<file name="Use random() to return a random number between 0 and 1.html" server="ftp.powweb.com/HTML5RE/" local="130216822800000000" remote="130367769600000000" Dst="0" />
+<file name="Use min() to return the number with the lowest value of two specified numbers.html" server="ftp.powweb.com/HTML5RE/" local="130216822800000000" remote="130367769600000000" Dst="0" />
+<file name="Use max() to return the number with the highest value of two specified numbers.html" server="ftp.powweb.com/HTML5RE/" local="130216822800000000" remote="130367769600000000" Dst="0" />
+<file name="Use getTime() to calculate the years since 1970.html" server="ftp.powweb.com/HTML5RE/" local="130216822800000000" remote="130367769600000000" Dst="0" />
+<file name="Use getDay() and an array to write a weekday, and not just a number.html" server="ftp.powweb.com/HTML5RE/" local="130216822800000000" remote="130367769600000000" Dst="0" />
+<file name="Use Date() to return today's date and time.html" server="ftp.powweb.com/HTML5RE/" local="130216822800000000" remote="130367769000000000" Dst="0" />
+<file name="Style strings.html" server="ftp.powweb.com/HTML5RE/" local="130216822800000000" remote="130367769000000000" Dst="0" />
+<file name="Sort numbers (numerically and descending) - sort().html" server="ftp.powweb.com/HTML5RE/" local="130216822800000000" remote="130367769000000000" Dst="0" />
+<file name="Sort numbers (numerically and ascending) - sort().html" server="ftp.powweb.com/HTML5RE/" local="130216822800000000" remote="130367769000000000" Dst="0" />
+<file name="Sort an array (alphabetically and ascending) - sort().html" server="ftp.powweb.com/HTML5RE/" local="130216822800000000" remote="130367769000000000" Dst="0" />
+<file name="Select elements from an array - slice().html" server="ftp.powweb.com/HTML5RE/" local="130216822800000000" remote="130367769000000000" Dst="0" />
+<file name="Search for a text in a string and return the text if found - match().html" server="ftp.powweb.com/HTML5RE/" local="130216822800000000" remote="130367769000000000" Dst="0" />
+<file name="Reverse the order of the elements in an array - reverse().html" server="ftp.powweb.com/HTML5RE/" local="130216822800000000" remote="130367769000000000" Dst="0" />
+<file name="Return the position of the first occurrence of a text in a string - indexOf().html" server="ftp.powweb.com/HTML5RE/" local="130216822800000000" remote="130367769000000000" Dst="0" />
+<file name="Return the length of a string.html" server="ftp.powweb.com/HTML5RE/" local="130216822800000000" remote="130367769000000000" Dst="0" />
+<file name="Replace characters in a string - replace().html" server="ftp.powweb.com/HTML5RE/" local="130216822800000000" remote="130367769000000000" Dst="0" />
+<file name="Remove the last element of an array - pop().html" server="ftp.powweb.com/HTML5RE/" local="130216822800000000" remote="130367769000000000" Dst="0" />
+<file name="Remove the first element of an array - shift().html" server="ftp.powweb.com/HTML5RE/" local="130216822800000000" remote="130367769000000000" Dst="0" />
+<file name="Join two arrays - concat().html" server="ftp.powweb.com/HTML5RE/" local="130216822800000000" remote="130367769000000000" Dst="0" />
+<file name="Join three arrays - concat().html" server="ftp.powweb.com/HTML5RE/" local="130216822200000000" remote="130367769000000000" Dst="0" />
+<file name="Join all elements of an array into a string - join().html" server="ftp.powweb.com/HTML5RE/" local="130216822200000000" remote="130367769000000000" Dst="0" />
+<file name="Display a clock.html" server="ftp.powweb.com/HTML5RE/" local="130216822200000000" remote="130367769000000000" Dst="0" />
+<file name="Create an array.html" server="ftp.powweb.com/HTML5RE/" local="130216822200000000" remote="130367769000000000" Dst="0" />
+<file name="Convert Celsius to Fahrenheit.html" server="ftp.powweb.com/HTML5RE/" local="130216822200000000" remote="130367769000000000" Dst="0" />
+<file name="Convert an array to a string - toString().html" server="ftp.powweb.com/HTML5RE/" local="130216822200000000" remote="130367769000000000" Dst="0" />
+<file name="Check Boolean value.html" server="ftp.powweb.com/HTML5RE/" local="130216822200000000" remote="130367769000000000" Dst="0" />
+<file name="Add new elements to the end of an array - push().html" server="ftp.powweb.com/HTML5RE/" local="130216822200000000" remote="130367769000000000" Dst="0" />
+<file name="Add new elements to the beginning of an array - unshift().html" server="ftp.powweb.com/HTML5RE/" local="130216822200000000" remote="130367769000000000" Dst="0" />
+<file name="Add an element to position 2 in an array - splice().html" server="ftp.powweb.com/HTML5RE/" local="130216822200000000" remote="130367769000000000" Dst="0" />
+</dwsync>

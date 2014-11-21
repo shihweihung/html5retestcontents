@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Basic GeoLocation</title>
+<script type="text/javascript">
+    function initGeolocation()
+    {
+        if( navigator.geolocation )
+        {
+
+            // Call getCurrentPosition with success and failure callbacks
+            navigator.geolocation.watchPosition( success, fail );
+        }
+        else
+        {
+            var message = document.getElementById("message"), html = [];
+			html.push("<p>not support Geolocation!</p>");
+			message.innerHTML = html.join("");
+        }
+    }
+
+   
+    function success(location)
+    {
+        var message = document.getElementById("message"), html = [];
+		html.push("<p>Longitude: ", location.coords.longitude, "</p>");
+		html.push("<p>Latitude: ", location.coords.latitude, "</p>");
+		html.push("<p>Accuracy: ", location.coords.accuracy, " meters</p>");
+		message.innerHTML = html.join("");
+    }
+
+    function fail()
+    {
+        var message = document.getElementById("message"), html = [];
+		html.push("<p>faild to get location!</p>");
+		
+    }
+</script>
+</head>
+<body onload="initGeolocation();">
+<div id="message">Location unknown</div>
+</body>
+</html>

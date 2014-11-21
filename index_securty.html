@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+
+
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>Security</title><script>
+function file_download_new_window()
+{
+	window.open("httpwatchpro.exe")
+}
+</script>
+<style type="text/css">
+body {
+	background-color: #CCC;
+}
+</style>
+</head><body>
+<h2>Securty Test Page</h2>
+<hr>
+<div>
+<h3 style="background-color:#00FFFF">Certificate Test</h3>
+<table border="0">
+  <tr>
+    <td width="150"><ul type="square">
+      <li><a href="https://www.google.com/">Server Certificate</a></li>
+    </ul></td>
+    <td width="150"><ul type="square">
+      <li><a href="https://tv.eurosport.com/">Invalid Certificate</a></li>
+    </ul></td>
+    <td width="150"><ul type="square">
+      <li>Expried Certificate</li></ul></td>
+    <td width="150"><ul type="square">
+      <li><a href="http://10.11.0.203">Client Certificate</a></li>
+    </ul></td>
+    <td width="150">&nbsp;</td>
+    <td width="150">&nbsp;</td>
+  </tr>
+</table>
+</div>
+<h3 style="background-color:#00FFFF">Authentication Test</h3>
+<table border="0">
+  <tr>
+    <td width="150"><ul type="square">
+      <li><a href="Head/Security/basic_auth/index.html">Basic</a></li>
+    </ul></td>
+    <td width="150"><ul type="square">
+      <li><a href="Head/Security/digest_auth/index.html">Digest</a></li>
+    </ul></td>
+  </tr>
+</table>
+</div>
+<p>How to test expired certificate?</p>
+<p>Changing system time not in the duration.
+<p>For example: https:www.google.com
+<p>The vadlidation duration is 1 year. From 2013/11/13 to 2014/11/13
+</body></html>

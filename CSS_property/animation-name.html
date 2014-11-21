@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<style type="text/css"> 
+div
+{
+width:100px;
+height:100px;
+background:red;
+position:relative;
+animation-name:mymove;
+animation-duration:5s;
+/* Firefox */
+-moz-animation-name:mymove;
+-moz-animation-duration:5s;
+/* Safari and Chrome */
+-webkit-animation-name:mymove;
+-webkit-animation-duration:5s;
+}
+
+@keyframes mymove
+{
+from {left:0px;}
+to {left:200px;}
+}
+
+@-moz-keyframes mymove /* Firefox */
+{
+from {left:0px;}
+to {left:200px;}
+}
+
+@-webkit-keyframes mymove /* Safari and Chrome */
+{
+from {left:0px;}
+to {left:200px;}
+}
+</style>
+</head>
+<body>
+
+<p><b>Note:</b> This example does not work in Internet Explorer and Opera.</p>
+
+<div></div>
+
+<p><b>Note:</b> Specify the animation-duration property. Otherwise the duration is 0, and the animation will not be played.</p>
+
+</body>
+</html>
+

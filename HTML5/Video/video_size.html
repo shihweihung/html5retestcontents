@@ -1,0 +1,51 @@
+<!DOCTYPE html> 
+<html> 
+<script>
+  
+function changeSize()
+	{
+		myVid = document.getElementById("video");
+		myVid.width = "64";
+		myVid.height = "64";
+	}
+function changeSize1()
+	{
+		myVid = document.getElementById("video");
+		myVid.width = "128";
+		myVid.height = "128";
+	}
+function changeSize2()
+	{
+		myVid = document.getElementById("video");
+		myVid.width = "400";
+		myVid.height = "240"
+	}
+function changeSize3()
+	{
+		myVid = document.getElementById("video");
+		myVid.width = "800";
+		myVid.height = "480"
+	}	
+function changeSize4()
+	{
+		myVid = document.getElementById("video");
+		myVid.width = "1024";
+		myVid.height = "600"
+	}			
+</script> 
+<body> 
+
+<button type="button" onclick="changeSize()">16*16</button>
+<button type="button" onclick="changeSize1()">128*128</button>
+<button type="button" onclick="changeSize2()">400*240</button>
+<button type="button" onclick="changeSize3()">800*480</button>
+<button type="button" onclick="changeSize4()">1024*600</button>
+<br> 
+<video id="video">
+  <source src="src/movie.mp4" type="video/mp4">
+  <!--source src="src/movie.ogg" type="video/ogg"-->
+  Your browser does not support HTML5 video.
+</video>
+
+</body> 
+</html>

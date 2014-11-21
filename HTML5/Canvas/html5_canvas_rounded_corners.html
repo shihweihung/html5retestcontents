@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!-- saved from url=(0081)http://www.html5canvastutorials.com/demos/tutorials/html5_canvas_rounded_corners/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<META HTTP-EQUIV="refresh" content="20;URL=html5_canvas_shape_fill.html">
+        <style>
+            body {
+                margin: 0px;
+                padding: 0px;
+            }
+            
+            #myCanvas {
+                border: 1px solid #9C9898;
+            }
+        </style>
+        <script>
+            
+            window.onload = function(){
+                var canvas = document.getElementById("myCanvas");
+                var context = canvas.getContext("2d");
+                
+                var rectWidth = 200;
+                var rectHeight = 100;
+                var rectX = canvas.width / 2 - rectWidth / 2;
+                var rectY = canvas.height / 2 - rectHeight / 2;
+                
+                var cornerRadius = 50;
+                
+                context.beginPath();
+                context.moveTo(rectX, rectY);
+                context.lineTo(rectX + rectWidth - cornerRadius, rectY);
+                context.arcTo(rectX + rectWidth, rectY, rectX + rectWidth, rectY + cornerRadius, cornerRadius);
+                context.lineTo(rectX + rectWidth, rectY + rectHeight);
+                
+                context.lineWidth = 5;
+                context.stroke();
+            };
+        </script>
+    </head>
+    <body onmousedown="return false;">
+        <canvas id="myCanvas" width="578" height="200">
+        </canvas>
+    
+
+</body></html>

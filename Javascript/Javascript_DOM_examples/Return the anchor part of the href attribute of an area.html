@@ -1,0 +1,23 @@
+<html>
+<body>
+
+<img src="planets.gif"
+width="145" height="126"
+usemap="#planetmap" />
+
+<map name="planetmap">
+<area id="venus" shape="circle"
+coords="124,58,8"
+alt="Venus"
+href="venus.htm#description" />
+</map>
+
+<p>The anchor part of the href attribute for Venus is:
+<script type="text/javascript">
+document.write(document.getElementById("venus").hash);
+</script>
+</p>
+
+</body>
+</html>
+

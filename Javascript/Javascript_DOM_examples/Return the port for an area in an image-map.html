@@ -1,0 +1,25 @@
+<html>
+<body>
+
+<img src="planets.gif" 
+width="145" height="126"
+usemap="#planetmap" />
+
+<map name="planetmap">
+<area id="venus" shape="circle"
+coords="124,58,8"
+alt="Venus"
+href="venus.htm" />
+</map>
+
+<p>The port for the "Venus" area is:
+<script type="text/javascript">
+document.write(document.getElementById('venus').port);
+</script>
+</p>
+
+<p><b>Note:</b> If the port part is not specified in the URL, or is 80 (which is default), some browsers will just display 0 or nothing.</p>
+
+</body>
+</html>
+

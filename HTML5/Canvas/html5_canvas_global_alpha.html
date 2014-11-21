@@ -1,0 +1,39 @@
+
+<!-- saved from url=(0078)http://www.html5canvastutorials.com/demos/tutorials/html5_canvas_global_alpha/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<META HTTP-EQUIV="refresh" content="20;URL=html5_canvas_transform_translate.html">
+        <style>
+            body {
+                margin: 0px;
+                padding: 0px;
+            }
+            
+            #myCanvas {
+                border: 1px solid #9C9898;
+            }
+        </style>
+        <script>
+            
+            window.onload = function(){
+                var canvas = document.getElementById("myCanvas");
+                var context = canvas.getContext("2d");
+                
+                context.beginPath();
+                context.rect(200, 20, 100, 100);
+                context.fillStyle = "blue";
+                context.fill();
+                
+                context.globalAlpha = 0.5; // set global alpha
+                context.beginPath();
+                context.arc(320, 120, 60, 0, 2 * Math.PI, false);
+                context.fillStyle = "red";
+                context.fill();
+            };
+        </script>
+    </head>
+    <body onmousedown="return false;">
+        <canvas id="myCanvas" width="578" height="200">
+        </canvas>
+    
+
+</body></html>

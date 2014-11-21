@@ -1,0 +1,48 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<style type="text/css"> 
+div
+{
+width:100px;
+height:100px;
+background:red;
+position:relative;
+animation:mymove infinite;
+animation-duration:1s;
+/* Firefox */
+-moz-animation:mymove infinite;
+-moz-animation-duration:1s;
+/* Safari and Chrome */
+-webkit-animation:mymove infinite;
+-webkit-animation-duration:1s;
+}
+
+@keyframes mymove
+{
+from {top:0px;}
+to {top:200px;}
+}
+
+@-moz-keyframes mymove /* Firefox */
+{
+from {top:0px;}
+to {top:200px;}
+}
+
+@-webkit-keyframes mymove /* Safari and Chrome */
+{
+from {top:0px;}
+to {top:200px;}
+}
+</style>
+</head>
+<body>
+
+<p><b>Note:</b> This example does not work in Internet Explorer and Opera.</p>
+
+<div></div>
+
+</body>
+</html>
+

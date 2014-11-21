@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!-- saved from url=(0077)http://www.html5canvastutorials.com/demos/tutorials/html5_canvas_text_stroke/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<META HTTP-EQUIV="refresh" content="20;URL=html5_canvas_text_align.html">
+        <style>
+            body {
+                margin: 0px;
+                padding: 0px;
+            }
+            
+            #myCanvas {
+                border: 1px solid #9C9898;
+            }
+        </style>
+        <script>
+            
+            window.onload = function(){
+                var canvas = document.getElementById("myCanvas");
+                var context = canvas.getContext("2d");
+                
+                var x = 80;
+                var y = 110;
+                context.font = "60pt Calibri";
+                
+                context.lineWidth = 3;
+                context.strokeStyle = "blue"; // stroke color
+                context.strokeText("Hello World!", x, y);
+            };
+        </script>
+    </head>
+    <body onmousedown="return false;">
+        <canvas id="myCanvas" width="578" height="200">
+        </canvas>
+    
+
+</body></html>

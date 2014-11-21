@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<style>
+div
+{
+position:relative;
+height:60px;
+width:60px;
+background-color:red;
+transform:rotateY(180deg);
+-webkit-transform:rotateY(180deg); /* Safari and Chrome */
+}
+#div1
+{
+-webkit-backface-visibility:hidden;
+}
+#div2
+{
+-webkit-backface-visibility:visible;
+}
+</style>
+</head>
+<body>
+
+<p>This example shows two div elements, rotated 180 degrees, facing away from the user.</p>
+
+<p>The first div element has the backface-visibility property set to "hidden", and should therefore be invisible.</p>
+
+<div id="div1">DIV 1</div>
+
+<div id="div2">DIV 2</div>
+
+<p><b>Note:</b> This example does only work in Safari.</p>
+
+</body>
+</html>
+

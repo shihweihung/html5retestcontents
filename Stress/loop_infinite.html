@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function myFunction()
+{
+//document.getElementById("demo").innerHTML="Hello World";
+	var cnt = 0;
+	document.open();
+
+	while (1)
+	{
+		var date = new Date();
+		document.write(cnt + ": " + date.getTime() + "<br>");
+		cnt = cnt + 1;
+	}
+	document.close();
+	//document.getElementById("demo").innerHTML=x;
+}
+</script>
+</head>
+<body>
+
+<p>Click the button to trigger a function.</p>
+
+<button onclick="myFunction()">Click me</button>
+
+<p id="demo"></p>
+
+</body>
+</html>

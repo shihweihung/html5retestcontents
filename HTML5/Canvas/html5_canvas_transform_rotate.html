@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!-- saved from url=(0081)http://www.html5canvastutorials.com/demos/advanced/html5_canvas_transform_rotate/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<META HTTP-EQUIV="refresh" content="20;URL=html5_canvas_mirror_transform.html">
+        <style>
+            body {
+                margin: 0px;
+                padding: 0px;
+            }
+            
+            #myCanvas {
+                border: 1px solid #9C9898;
+            }
+        </style>
+        <script>
+            
+            window.onload = function(){
+                var canvas = document.getElementById("myCanvas");
+                var context = canvas.getContext("2d");
+                
+                var rectWidth = 150;
+                var rectHeight = 75;
+                
+                // translate context to center of canvas
+                context.translate(canvas.width / 2, canvas.height / 2);
+                // rotate 45 degrees clockwise
+                context.rotate(Math.PI / 4);
+                
+                context.fillStyle = "blue";
+                context.fillRect(-rectWidth / 2, -rectHeight / 2, rectWidth, rectHeight);
+            };
+        </script>
+    </head>
+    <body onmousedown="return false;">
+        <canvas id="myCanvas" width="578" height="200">
+        </canvas>
+    
+
+</body></html>

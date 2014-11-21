@@ -1,0 +1,4 @@
+AuthType digest 
+AuthName "THIS IS MY DIGEST AUTH_TEST"
+AuthUserFile "C:\TWAMPd\htdocs\basic_auth\test" 
+Require valid-user

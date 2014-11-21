@@ -1,0 +1,18 @@
+<html>
+<head>
+<script type="text/javascript">
+var myWindow;
+function openWin()
+{
+myWindow=window.open('','MsgWindow','width=200,height=100');
+myWindow.document.write("<p>This window's name is: " + myWindow.name + "</p>");
+}
+</script>
+</head>
+<body>
+
+<input type="button" value="Open 'myWindow'" onclick="openWin()" />
+
+</body>
+</html>
+

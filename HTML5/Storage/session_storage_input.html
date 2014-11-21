@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2>Session Storage Test</h2>
+<hr>
+<div id="msg_div"></div>
+<textarea id="main_txt" cols="30" rows="8" >Save me to session storage!</textarea>
+<button onclick="triggerStorage()">Button</button>
+<div>When you click the button, a function is triggered which save the input text to session storage.</div>
+<script type="text/javascript">
+	var main_txt = document.getElementById("main_txt");	
+	window.onload = function(){
+		var momo = sessionStorage.getItem("memo");
+		if (momo != null){
+			main_txt.value = momo;
+		}
+	};
+	
+	function triggerStorage(){
+		sessionStorage.setItem("memo", main_txt.value);
+	};
+</script>
+</body>
+</html>

@@ -1,0 +1,220 @@
+Dump Render Tree Layout Test Setup with BSQUARE Browser
+Chris Yang
+Last Update: Jan 21st 2013
+Please note: This is for Win32 installation
+
+Note 1 (Date: Jan 9th 2013)
+The following instruction works successfully in the current Win7 32-bit desktop/laptop
+with VS2005 or 2008 installed.
+
+
+1. If you do not have VS2008 with SP1, please install them.
+Location: \\btaiwanfs\PES\DevTools\VS2008 professional
+Note: You need a Disc Burner software to execute the Disc Image File.
+      You can try UltraISO (Google it)
+Note2: Copy the entire disk files/directories to a newly created file
+       called VS2008 and run setup.exe
+Note3: For Service Pack 1, run SPInstaller application
+Note4: For VS2005, you need to install the CE6 R3 Platform Builder
+and all of the subsequent updates for Platform Builder under
+\\btaiwanfs\PES\Jetstream\Yamazaki(CE6) directory
+
+
+2. (maybe optional) If you do not have GIT, please install it.
+Location: http://git-scm.com/ (Latest stable release)
+Note: Please select "Use Git Bash only" for Adjusting your PATH environment
+      and "Checkout as-is, commit Unix-style line endings" for Configuring
+      the line ending conversions
+
+
+3. Install CE/MS Device Emulator
+Location: http://www.microsoft.com/en-us/download/details.aspx?id=5352
+          or Google "Microsoft Device Emulator 3.0"
+Note: You might see "Repair" and "Uninstall" dialog box the first time when
+      you try to run the setup. Please select "Uninstall" first and run the
+      setup again.
+
+
+4. (maybe optional) Install MS Virtual PC 2007 (if it doesn't exist on your PC)
+Location: http://www.microsoft.com/en-us/download/details.aspx?id=4580
+          or Google "Microsoft Virtual PC 2007"
+
+
+5. Install CE6_Default.msi which is the SDK for CE6
+
+An MSI for installing CE6_Default can be found at:
+ 
+\\newcastle\PESBuild\Builds\drop\WEBKIT\SDKs\CE6_Default.msi
+
+Note: if you are installing CE6_Default.msi on Visual Studio 2008, you need
+to select Custom Installation and Deselect Documentation from the installation
+or else you¡¦ll get the following errors during installation:
+ 
+"ToolMsmCA (Error): IHxRegisterSession transaction failure: Err = 0x8004036f, pRegSession -> CommitTransaction()" or 
+"ToolsMsmCA (Error):IHxFilters filter registration failure: Err=0x80040305, Context = pFilters ->SetNamespace(Namespace)"
+ 
+This will not happen if you¡¦re on Visual Studio 2005 (but then it's a pain
+to install VS2005 since you also would need to install CE6 R3 Platform Builder
+and all of the subsequent updates for PB).
+
+
+6. Get the latest Bsquare browser build in
+\\newcastle\PESBuild\Builds\drop\WEBKIT_V2\v2-bsquare directory and copy it
+(i.e. 14-2012-12-27_15-25-03) in your local disk (e.g. C:\bsqBrowser)
+
+
+7. (Bringing up CE6 Emulator)
+ a. Start VS2008 (or 2005)
+ b. Select Tools->"Connect to Device" menu and a "Connect to Device" dialog box will appar
+ c. Select CE6_Default under Platform: and choose "CE6_Default Emulator" and press the "Connect" button
+
+Win Embedded CE6 Emulator will appear.
+
+
+8. From the Device Emulator, perform the following:
+ a. File->Configure, Network tab, check "Enable NE2000 PCMCIA..." and select the
+    NIC or wireless card, press OK button
+ b. File->Configure, General tab, under Shared folder, enter the folder containing
+    the latest Bsquare browser build (i.e. 14-2012-12-27_15-25-03)
+
+
+9. Trigger bsqBrowser
+ a. Double click on My Device/Storage Card
+ b. Double click on bsqBrowser
+ c. You should now be able to browser the web
+
+
+10. To get DumpRenderTree.exe working, you would need tux.exe and kato.dll which
+are currently missing in the Bsquare browser build directory.
+
+Please get the RAR file containing those 2 files under:
+\\btaiwanfs\PES\QA\Tools\Emulator\CE6\Tux-ARMv4i
+
+and put both tux.exe and kato.dll under Bsquare browser build directory
+(i.e. 14-2012-12-27_15-25-03)
+
+
+11. Follow the instructions under Wiki for DRT:
+http://wiki/index.php?title=Dump_Render_Tree
+
+For both Demo1.html and launchDemo01.txt, I have saved them under:
+\\btaiwanfs\PES\QA\Tools\Emulator\CE6\Tux-ARMv4i
+
+Both Demo1.html and launchDemo01.txt are just sample files for you to look
+at how DumpRenderTree.exe works.
+
+You can first try to run DumpRenderTree.exe and see the result for yourself:
+1. From the CE6 Emulator, Start->Run cmd.exe
+2. From cmd window, type "cd storage card"
+3. Type "dumprendertree --input-file "\storage card\launchDemo01.txt"
+
+Note: You need to enter full path for launchDemo01.txt file or else dumprendertree.exe
+will fail.
+
+Here's the output for dumprendertree.exe execution (note: you should see
+didFailProvisionalLoadWithError which is fine, according to Wiki):
+
+#URL:\storage card\demo01.html 
+
+main frame - didFailProvisionalLoadWithError
+layer at (0,0) size 800x600
+  RenderView at (0,0) size 800x600
+layer at (0,0) size 800x600
+  RenderBlock {HTML} at (0,0) size 800x600
+    RenderBody {BODY} at (8,8) size 784x584
+#EOF
+#EOF
+
+Note2: DRT is similar to a browser such that it is actually a shell of WebKit.
+WebKit itself is a web rendering engine and DRT, similar to a browser, is a shell
+that would render the web content in either text or image form.
+
+
+12. To run DumpRenderTree.exe in a script fashion, you would need TUX4DRT.
+Here is the step on running tux4drt:
+ a. Use DefaultScript.txt under the command line:
+	tux.exe ¡Vd ¡§\storage card\tux4drt.dll¡¨ ¡Vf ¡§\storage card\log.txt¡¨
+    Note: place the html and expected files under the respective directory
+    specified in DefaultScript.txt
+ b. Tux will use defaultscript.txt's HTML files as input test case files
+    to render inputs (i.e. CSS/CSS3 styles, HTML tags, etc) within the HTML
+    body (i.e. <body><p class="test"></p></body) and, via Javascript
+    functions (i.e. document.getElementById or documentgetElementByClassName) and
+    depending on whether the test input is CSS style or HTML tags, compare the
+    rendering output to see if WebKit is successful in rendering CSS style or
+    HTML tags correctly.
+
+I have placed a few HTML files as test case files as well as DefaultScript.txt
+file under \\btaiwanfs\PES\QA\Tools\Emulator\CE6\Tux-ARMv4i for you to try out.
+
+You may ask: what does DRT test?
+
+Well, DRT basically test WebKit rendering. If you take a look at the sample
+HTML file (say css-black.html), you'll notice that the input test value is the
+color 'black'. WebKit should render the value 'back' as rgb(0, 0, 0). If not,
+then there's a bug in WebKit.
+
+One final note: you'll notice that when you execute tux.exe, there is a newly
+created file folder with the name formatted as "<date>-<hour-min-sec>". This
+is quite normal as tux.exe is creating a temporary folder to store its DRT
+related test files.
+
+
+
+
+
+Note 2 (Date: Jan 9th 2013)
+The following instruction was compiled based on Jeffery's past instructions
+as well as various instructions taken from various QA team members. However,
+the emulator fails to recognize the desktop/laptop NIC.
+
+1. If you do not have VS2008 with SP1, please install them.
+Location: \\btaiwanfs\PES\DevTools\VS2008 professional
+Note: You need a Disc Burner software to execute the Disc Image File.
+      You can try UltraISO (Google it)
+Note2: Copy the entire disk files/directories to a newly created file
+       called VS2008 and run setup.exe
+Note3: For Service Pack 1, run SPInstaller application
+Note4: For VS2005, you need to install the CE6 R3 Platform Builder
+and all of the subsequent updates for Platform Builder under
+\\btaiwanfs\PES\Jetstream\Yamazaki(CE6) directory
+
+2. If you do not have GIT, please install it.
+Location: http://git-scm.com/ (Latest stable release)
+Note: Please select "Use Git Bash only" for Adjusting your PATH environment
+      and "Checkout as-is, commit Unix-style line endings" for Configuring
+	  the line ending conversions
+
+3. Install CE/MS Device Emulator
+Location: http://www.microsoft.com/en-us/download/details.aspx?id=5352
+          or Google "Microsoft Device Emulator 3.0"
+Note: You might see "Repair" and "Uninstall" dialog box the first time when
+      you try to run the setup. Please select "Uninstall" first and run the
+	  setup again.
+
+4. Install MS Virtual PC 2007 (if it doesn't exist on your PC)
+Location: http://www.microsoft.com/en-us/download/details.aspx?id=4580
+          or Google "Microsoft Virtual PC 2007"
+
+5. Follow the instructions located in BSQUARE TW forum location under:
+http://rdtw.camelot.bsquare.com/forum/viewthread.php?tid=510&extra=page%3D1
+Here are some of the important items from that forum discussion:
+  a. NK.bin located in \\btaiwanfs\bshare\Depts\PES\QA\Tools\Emulator\CE6\JeffreyCh
+     should be copied to a file (let's call it C:\Emulator\CE6)
+  b. Enter command "DeviceEmulator.exe /memsize 128 C:\Emulator\CE6\NK.bin /video
+     640x480x16"
+     Note: /memsize can be 256 and /video can be 800x600x16
+  c. Run 'dmacnect' in Emulator
+  d. Note: Step 7, Enable DMA connection in ActiveSync is probably not needed
+
+6. From the Device Emulator, perform the following:
+ a. File->Configure, Network tab, check "Enable NE2000 PCMCIA..." and select the
+    NIC or wireless card, press OK button
+ b. Press OK on the pop-up dialog box
+ c. File->Configure, General tab, under Shared folder, enter the folder containing
+    the latest Bsquare browser build (i.e. 14-2012-12-27_15-25-03)
+
+7. Trigger bsqBrowser
+ a. Double click on My Device/Storage Card
+ b. Double click on bsqBrowser
+ <currently has error on desktop as the emulator doesn't recognize the NIC>

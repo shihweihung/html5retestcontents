@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+var x=0;
+var websiteString;
+var websites;
+var website;
+function loadXMLDoc()
+{
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.onreadystatechange=function()
+  {
+	websiteString = xmlhttp.responseText;
+	websites = websiteString.split(',');
+	website = websites[x];
+	document.getElementById("myDiv").innerHTML = "Test websites history(bottom to top)" + ": ";
+	}
+xmlhttp.open("GET","list_bild.txt",true);
+xmlhttp.send();
+}
+
+var tr = setInterval(function(){startTest()}, 180000);
+function startTest()
+{
+	//var myVar=setInterval(function(){myFunction()},5000);
+    var iframe = document.createElement('myFrame');
+	//iframe.addEventListener("onload", myFunction(), true);
+	iframe.onload = myFunction();
+}
+function myFunction()
+{
+	var today=new Date();
+	var M=today.getMonth()+1;
+	var D=today.getDate();
+	var h=today.getHours();
+	var m=today.getMinutes();
+	var s=today.getSeconds();
+	// add a zero in front of numbers<10
+	//m=checkTime(m);
+	//s=checkTime(s);
+	var loadtime = M+"/"+D+" "+h+":"+m+":"+s;
+
+	if(x < 200)
+	{
+		var website = websites[Math.floor((Math.random() * 100) + 1)%websites.length];
+		//var website = websites[x];
+		document.getElementById('myFrame').src = website;
+		var newItem=document.createElement("Div")
+		var textnode=document.createTextNode("#" + x + website + " " + loadtime)
+		newItem.appendChild(textnode)
+
+		var list=document.getElementById("myDiv1")
+		list.insertBefore(newItem,list.childNodes[0]);
+		x++;
+	}
+	
+}
+function myStopFunction() 
+	{
+    clearInterval(tr);
+	}
+</script>
+</head>
+<body onload="loadXMLDoc()">
+<iframe id="myFrame" onload="myFunction()" src="http://www.w3schools.com/" height="200" width="600"></iframe>
+<h2>Websites Auto Regression Test</h2>
+<div id="myDiv"></div>
+<div id="myDiv1"></div>
+<button type="button" onclick="startTest()">Start</button>
+<button onclick="myStopFunction()">Stop force trigger</button>
+</body>
+</html>

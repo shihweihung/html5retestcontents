@@ -1,0 +1,23 @@
+<html>
+<body>
+
+<img src="planets.gif" 
+width="145" height="126"
+usemap="#planetmap" />
+
+<map name="planetmap">
+<area id="venus" shape="circle"
+coords="124,58,8"
+alt="Venus"
+href="venus.htm?id=venus" />
+</map>
+
+<p>The querystring part for the "Venus" area is:
+<script type="text/javascript">
+document.write(document.getElementById('venus').search);
+</script>
+</p>
+
+</body>
+</html>
+

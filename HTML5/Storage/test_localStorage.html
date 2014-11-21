@@ -1,0 +1,115 @@
+<html>
+	<head>
+		<script language="JavaScript">
+			//------------------------------
+			// DOM STORAGE Test
+			//------------------------------
+			function input_storage()
+			{
+				// Input
+				localStorage.name = "localStorageTest";
+//				localStorage.name = prompt('•¶Žš“ü—Í‚µ‚Ä‚­‚¾‚³‚¢');
+				document.getElementById("show_result").innerHTML = "&nbsp;&nbsp;&nbsp;&nbsp;"+"\""+localStorage.name+"\"";
+			}
+
+			function clear_storage()
+			{
+				// Clear
+				localStorage.name = "";
+				document.getElementById("show_result").innerHTML = "&nbsp;&nbsp;&nbsp;&nbsp;"+"\""+localStorage.name+"\"";
+			}
+
+			// Display Function
+			function display_storage()
+			{
+				document.getElementById("show_result").innerHTML = "&nbsp;&nbsp;&nbsp;&nbsp;"+"\""+localStorage.name+"\"";
+			}
+
+			//------------------------------
+			// focus
+			//------------------------------
+			function focus_font(p) {
+			  p.style.color="red";
+			}
+			function blur_font(p) {
+			  p.style.color="blue";
+			}
+		</script>
+		<title>localStorage Test</title>
+	</head>
+
+	<!-- ************************** //-->
+	<!-- ***** ‚±‚±‚©‚ç•\Ž¦•” ***** //-->
+	<!-- ************************** //-->
+	<body bgcolor=white lang=JA link=blue vlink=blue style='tab-interval:42.0pt'
+	 leftmargin=0 topmargin=0 marginwidth=0 marginheight=0>
+
+		<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'>
+			<b>
+				<a name="_top"></a>
+				&nbsp;
+				--- localStorage Test ---
+				<p>&nbsp;</p>
+				&nbsp;
+				--- localStorage.name ------
+				<div id="show_result">
+					&nbsp;&nbsp;&nbsp;&nbsp;Please select "test"
+				</div>
+				&nbsp;
+				------------------------------------
+			</b>
+		</p>
+
+		<!-- ***** Test Input localStorage ***** //-->
+		<ol start=1 type=1>
+			<li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+			 auto;mso-list:l5 level1 lfo3;tab-stops:list 36.0pt'>
+				<span class=spelle>
+					Input localStorage (name = "localStorageTest")
+				</span>
+			</li>
+		</ol>
+		<p class=MsoNormal align=center style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'>
+			<a href="#_top" onclick="input_storage()" onfocus="focus_font(this)" onblur="blur_font(this) ">
+				test
+			</a>
+		</p>
+
+		<!-- ***** Test Clear localStorage ***** //-->
+		<ol start=2 type=1>
+			<li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+			 auto;mso-list:l5 level1 lfo3;tab-stops:list 36.0pt'>
+				<span class=spelle>
+					Clear localStorage
+				</span>
+			</li>
+		</ol>
+		<p class=MsoNormal align=center style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'>
+			<a href="#_top" onclick="clear_storage()" onfocus="focus_font(this)" onblur="blur_font(this) ">
+				test
+			</a>
+		</p>
+
+		<!-- ***** Test Display localStorage ***** //-->
+		<ol start=3 type=1>
+			<li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+			 auto;mso-list:l5 level1 lfo3;tab-stops:list 36.0pt'>
+				<span class=spelle>
+					Display localStorage
+				</span>
+			</li>
+		</ol>
+		<p class=MsoNormal align=center style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'>
+			<a href="#_top" onclick="display_storage()" onfocus="focus_font(this)" onblur="blur_font(this) ">
+				test
+			</a>
+		</p>
+
+		<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;mso-list:l5 level1 lfo3;tab-stops:list 36.0pt'>
+			<a href="../Index.html" onfocus="focus_font(this)" onblur="blur_font(this) ">
+				Return Index
+			</a>
+		</p>
+
+	</body>
+</html>

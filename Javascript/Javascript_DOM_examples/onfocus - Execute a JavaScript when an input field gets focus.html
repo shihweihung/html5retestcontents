@@ -1,0 +1,19 @@
+<html>
+<head>
+<script type="text/javascript">
+function setStyle(x)
+{
+document.getElementById(x).style.background="yellow";
+}
+</script>
+</head>
+<body>
+
+First name: <input type="text" id="fname" onfocus="setStyle(this.id)" />
+<br />
+Last name: <input type="text" id="lname" onfocus="setStyle(this.id)" />
+<p>A function is triggered when one of the input fields get focus. The function changes the background-color of the input field.</p>
+
+</body>
+</html>
+

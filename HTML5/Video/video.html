@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<script type="text/javascript">
+var playFile = function(linkPath) {
+var video = document.getElementById("videoElement");
+video.src = linkPath;
+video.load(); 
+//video.play();
+document.getElementById("videourl").value = linkPath;
+}
+
+			
+</script>
+
+<body>
+<video id="videoElement" width="320" height="240" controls autoplay>
+  <source src="src/movie.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+<p>
+Video url:<input type="text" id="videourl" value="">
+<p>
+<button type="button" onclick="playFile('src/movie.mp4')">MP4</button>
+<button type="button" onclick="playFile('src/movie.ogg')">OGG</button>
+<button type="button" onclick="playFile('src/small.webm')">WEBM</button>
+<button type="button" onclick="playFile('src/funny.3gp')">3GP</button>
+<button type="button" onclick="playFile('src/test.MOV')">MOV</button>
+<button type="button" onclick="playFile('src/small.flv')">FLV</button>
+<p>
+<a href="video_dom.html">Video DOM</a>
+<p><a href="video_size.html">Video Size</a>
+</body>
+</html>

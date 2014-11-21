@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2>Session Storage Display Test</h2>
+<hr>
+<div id="msg_div"></div>
+<div> Above are you just inputted in textarea to save in session storage.
+<button onclick="clearString()">Clear</button>
+<script type="text/javascript">
+	var main_txt = document.getElementById("main_txt");
+	msg_div.innerHTML = "[" + sessionStorage.getItem("memo") + "]";	
+	
+	function clearString(){
+		sessionStorage.removeItem("memo");
+		location.reload();
+	}
+</script>
+</body>
+</html>

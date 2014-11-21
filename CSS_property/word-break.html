@@ -1,0 +1,29 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<style type="text/css"> 
+p.test1
+{
+width:11em; 
+border:1px solid #000000;
+word-break:hyphenate;
+}
+
+p.test2
+{
+width:11em; 
+border:1px solid #000000;
+word-break:break-all;
+}
+</style>
+</head>
+<body>
+
+<p class="test1"> This paragraph contains some text. This line will-break-at-hyphenates.</p>
+<p class="test2"> This paragraph contains some text: The lines will break at any character.</p>
+
+<p><b>Note:</b> The word-break property does not work in Firefox or Opera.</p>
+
+</body>
+</html>
+

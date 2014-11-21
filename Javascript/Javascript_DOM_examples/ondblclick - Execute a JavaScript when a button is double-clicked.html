@@ -1,0 +1,21 @@
+<html>
+<head>
+<script type="text/javascript">
+function copyText()
+{
+document.getElementById("field2").value=document.getElementById("field1").value;
+}
+</script>
+</head>
+<body>
+
+Field1: <input type="text" id="field1" value="Hello World!" /><br />
+Field2: <input type="text" id="field2" />
+<br /><br />
+<button ondblclick="copyText()">Copy Text</button>
+
+<p>A function is triggered when the button is double-clicked. The function copies the text in Field1 to Field2.</p>
+
+</body>
+</html>
+

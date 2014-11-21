@@ -1,0 +1,37 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<style type="text/css"> 
+div
+{
+width:350px;
+height:100px;
+border:1px solid black;
+
+/* Firefox */
+display:-moz-box;
+-moz-box-direction:reverse;
+
+/* Safari and Chrome */
+display:-webkit-box;
+-webkit-box-direction:reverse;
+
+/* W3C */
+display:box;
+box-direction:reverse;
+}
+</style>
+</head>
+<body>
+
+<div>
+<p>Cat</p>
+<p>Dog</p>
+<p>Horse</p>
+</div>
+
+<p><b>Note:</b> The box-direction property is not supported in IE or Opera.</p>
+
+</body>
+</html>
+

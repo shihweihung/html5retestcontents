@@ -1,0 +1,21 @@
+<html> <body bgcolor=#cccccc >
+<form name=fm>
+<input type=button value="Set cookie" onClick="setCookie()" >
+<input type=button value="Show cookie" onClick="getCookie()" >
+<input type=button value="Delete cookie" onClick="deleteCookie()" >
+<p> <input type=text name=tx size=30>
+</form>
+<script>
+function setCookie()
+{ now=new Date()
+ now.setTime( now.getTime() + 1000 * 60 * 5 )
+ document.cookie="ID=0123456789; expires=" + now.toGMTString()
+}
+
+function getCookie()
+{  document.fm.tx.value=document.cookie  }
+
+function deleteCookie()
+{ document.cookie = "ID=0123456789" + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;'};
+
+</script> </body> </html>

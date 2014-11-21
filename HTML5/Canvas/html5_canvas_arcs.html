@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!-- saved from url=(0070)http://www.html5canvastutorials.com/demos/tutorials/html5_canvas_arcs/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<META HTTP-EQUIV="refresh" content="20;URL=html5_canvas_quadratic_curves.html">
+        <style>
+            body {
+                margin: 0px;
+                padding: 0px;
+            }
+            
+            #myCanvas {
+                border: 1px solid #9C9898;
+            }
+        </style>
+        <script>
+            
+            window.onload = function(){
+                var canvas = document.getElementById("myCanvas");
+                var context = canvas.getContext("2d");
+                
+                var centerX = 288;
+                var centerY = 160;
+                var radius = 75;
+                var startingAngle = 1.1 * Math.PI;
+                var endingAngle = 1.9 * Math.PI;
+                var counterclockwise = false;
+                
+                context.arc(centerX, centerY, radius, startingAngle, endingAngle, counterclockwise);
+                
+                context.lineWidth = 15;
+                context.strokeStyle = "black"; // line color
+                context.stroke();
+            };
+        </script>
+    </head>
+    <body onmousedown="return false;">
+        <canvas id="myCanvas" width="578" height="250">
+        </canvas>
+    
+
+</body></html>

@@ -1,0 +1,26 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<style type="text/css"> 
+div.test
+{
+white-space:nowrap; 
+width:12em; 
+overflow:hidden; 
+border:1px solid #000000;
+}
+</style>
+</head>
+<body>
+
+<p>The following two divs contains a long text that will not fit in the box. As 
+you can see, the text is clipped.</p>
+<p>This div uses "text-overflow:ellipsis":</p>
+
+<div class="test" style="text-overflow:ellipsis;">This is some long text that will not fit in the box</div>
+<p>This div uses "text-overflow:clip":</p>
+<div class="test" style="text-overflow:clip;">This is some long text that will not fit in the box</div>
+
+</body>
+</html>
+

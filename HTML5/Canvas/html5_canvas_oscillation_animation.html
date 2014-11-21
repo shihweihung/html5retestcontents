@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!-- saved from url=(0086)http://www.html5canvastutorials.com/demos/advanced/html5_canvas_oscillation_animation/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+        <style>
+            body {
+                margin: 0px;
+                padding: 0px;
+            }
+            
+            #myCanvas {
+                border: 1px solid #9C9898;
+            }
+        </style>
+        <script src="./html5_canvas_oscillation_animation_files/kinetic2d-v1.0.0.js">
+        </script>
+        <script>
+            var kin;
+            var myRectangle;
+            
+            function Rectangle(x, y, width, height, borderWidth){
+                this.x = x;
+                this.y = y;
+                this.width = width;
+                this.height = height;
+                this.borderWidth = borderWidth;
+            }
+            
+            function updateStage(){
+                var amplitude = 150;
+                var centerX = 0;
+                var period = 2000; // in ms
+                centerX = kin.getCanvas().width / 2 - myRectangle.width / 2;
+                
+                var nextX = amplitude *
+                Math.sin(kin.getTime() * 2 * Math.PI / period) +
+                centerX;
+                myRectangle.x = nextX;
+            }
+            
+            window.onload = function(){
+                myRectangle = new Rectangle(250, 70, 100, 50, 5);
+                
+                // instantiate new animation object
+                kin = new Kinetic_2d("myCanvas");
+                
+                // set drawStage method
+                kin.setDrawStage(function(){
+                    updateStage();
+                    
+                    kin.clear();
+                    var context = kin.getContext();
+                    context.beginPath();
+                    context.rect(myRectangle.x, myRectangle.y, myRectangle.width, myRectangle.height);
+                    context.fillStyle = "#8ED6FF";
+                    context.fill();
+                    context.lineWidth = myRectangle.borderWidth;
+                    context.strokeStyle = "black";
+                    context.stroke();
+                });
+                // start animation
+                kin.startAnimation();
+            };
+        </script>
+    </head>
+    <body onmousedown="return false;">
+        <canvas id="myCanvas" width="578" height="200">
+        </canvas>
+    
+
+</body></html>

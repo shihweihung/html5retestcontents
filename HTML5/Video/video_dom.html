@@ -1,0 +1,95 @@
+<!DOCTYPE html> 
+<html> 
+<body> 
+
+<input id="playButton" type="button" onclick="playOrPause()" value="Play"></button>
+<button type="button" onclick="changeSrc()">Not Support</button>
+<button type="button" onclick="changeSrcOnline()">Online Video</button>
+<button type="button" onclick="networkState()">Network State</button>
+<br> 
+<video id="video" controls>
+  <source src="src/movie.mp4" type="video/mp4">
+  <!--source src="src/movie.ogg" type="video/ogg"-->
+  Your browser does not support HTML5 video.
+</video>
+
+<script>
+  myVid = document.getElementById("video");
+  myVid.addEventListener("timeupdate", function(){
+  var timeDisplay = document.getElementById("time");
+  timeDisplay.innerHTML = Math.floor(myVid.currentTime) + "/" + Math.floor(myVid.duration) + "s"
+  }, false);
+  
+  myVid.addEventListener("ended", function(){
+  alert ("The video has ended!");
+  }, false);
+
+  myVid.addEventListener("error", function(){
+  //var error = myVid.error;
+  switch(myVid.error){
+	case 1:
+		alert ("下載中止");
+		break;
+	case 2:
+		alert ("下載因網路錯誤而中止");
+		break;
+	case 3:
+		alert ("解碼失敗");
+		break;
+	case 4:
+		alert ("不支援的檔案格式");
+		break;
+	}
+}, false);	
+		
+function playOrPause()
+ { 
+  myVid = document.getElementById("video");
+  if (myVid.paused)
+  {
+  myVid.play();
+  document.getElementById("playButton").value = "Play";
+  } 
+  else
+  {
+  myVid.pause();
+  document.getElementById("playButton").value = "Pause";
+  }
+ } 
+function changeSrc()
+	{
+		myVid = document.getElementById("video");
+		myVid.src = "src/small.flv";
+		myVid.type = "video/flv";
+	}
+function changeSrcOnline()
+	{
+		myVid = document.getElementById("video");
+		myVid.src = "http://techslides.com/demos/sample-videos/small.webm";
+		myVid.type = "video/webm";
+	}	
+function networkState()
+	{
+		//alert(myVid.networkState);
+		//var networkState = myVid.networkState;
+  		switch(myVid.networkState){
+		case 0:
+			alert ("Video has not yet been initialized");
+			break;
+		case 1:
+			alert ("Video is active and has selected a resource, but is not using the network");
+			break;
+		case 2:
+			alert ("Browser is downloading data");
+			break;
+		case 3:
+			alert ("No video source found");
+			break;
+		}
+	}	
+</script> 
+
+<p>Play duration: <span id="time"></span></p>
+
+</body> 
+</html>

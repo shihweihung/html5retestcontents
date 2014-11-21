@@ -1,0 +1,26 @@
+<html>
+<body>
+
+<img src="planets.gif"
+width="145" height="126"
+usemap="#planetmap" />
+
+<map name="planetmap">
+<area id="venus" shape="circle"
+coords="124,58,8"
+alt="Venus"
+href="venus.htm" />
+</map>
+
+<p>Venus area's pathname:
+<script type="text/javascript">
+document.write(document.getElementById('venus').pathname);
+</script>
+</p>
+
+<p><b>Note:</b> IE and Opera returns "jsref/venus.htm", 
+while Firefox, Chrome, and Safari returns "/jsref/venus.htm".</p>
+
+</body>
+</html>
+

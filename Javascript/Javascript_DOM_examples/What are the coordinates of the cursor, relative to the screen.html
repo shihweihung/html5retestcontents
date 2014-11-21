@@ -1,0 +1,22 @@
+<html>
+<head>
+
+<script type="text/javascript">
+function coordinates(event)
+{
+var x=event.screenX;
+var y=event.screenY;
+alert("X=" + x + " Y=" + y);
+}
+
+</script>
+</head>
+<body onmousedown="coordinates(event)">
+
+<p>
+Click somewhere in the document. An alert box will alert the x and y coordinates of the cursor, relative to the screen.
+</p>
+
+</body>
+</html>
+

@@ -1,0 +1,4 @@
+AuthType Basic 
+AuthName "THIS IS MY AUTH_TEST"
+AuthUserFile "C:\TWAMPd\htdocs\basic_auth\htpasswd" 
+Require valid-user

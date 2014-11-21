@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2>Local Storage Display Test</h2>
+<hr>
+<div id="msg_div"></div>
+<div> Above are you just inputted in textarea to save in local storage.
+<button onclick="clearString()">Clear</button>
+<script type="text/javascript">
+	var main_txt = document.getElementById("main_txt");
+	msg_div.innerHTML = "[" + localStorage.getItem("memo") + "]";	
+	
+	function clearString(){
+		localStorage.removeItem("memo");
+		location.reload();
+	}
+</script>
+</body>
+</html>

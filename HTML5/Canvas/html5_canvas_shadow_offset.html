@@ -1,0 +1,37 @@
+
+<!-- saved from url=(0079)http://www.html5canvastutorials.com/demos/tutorials/html5_canvas_shadow_offset/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<META HTTP-EQUIV="refresh" content="20;URL=html5_canvas_global_alpha.html">
+
+        <style>
+            body {
+                margin: 0px;
+                padding: 0px;
+            }
+            
+            #myCanvas {
+                border: 1px solid #9C9898;
+            }
+        </style>
+        <script>
+            
+            window.onload = function(){
+                var canvas = document.getElementById("myCanvas");
+                var context = canvas.getContext("2d");
+                
+                context.rect(188, 40, 200, 100);
+                context.fillStyle = "#8ED6FF";
+                context.shadowColor = "#bbbbbb";
+                context.shadowBlur = 20;
+                context.shadowOffsetX = 15;
+                context.shadowOffsetY = 15;
+                context.fill();
+            };
+        </script>
+    </head>
+    <body onmousedown="return false;">
+        <canvas id="myCanvas" width="578" height="200">
+        </canvas>
+    
+
+</body></html>

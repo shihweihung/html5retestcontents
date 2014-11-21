@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+ <script type="text/javascript">
+     var before_loadtime = new Date().getTime();
+     window.onload = Pageloadtime;
+     function Pageloadtime() {
+         var aftr_loadtime = new Date().getTime();
+         // Time calculating in seconds
+         pgloadtime = (aftr_loadtime - before_loadtime) / 1000
+         document.getElementById("loadtime").innerHTML = "Pgae load time is <font color='red'><b>" + pgloadtime + "</b></font> Seconds";
+     }
+</script>
+</head>
+<body>
+<h3 style="font-weight: bold; font-style: italic; font-size: large; color: #3333CC">Page + 1M image load time in JavaScript</h3>
+<div>
+<span id="loadtime"></span></br>
+<img src="./src/1mImg1.jpg">
+</div>
+</body>
+</html>
