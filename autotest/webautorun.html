@@ -2,10 +2,10 @@
 <html>
 <head>
 <script>
-var x=0;
 var websiteString;
 var websites;
 var website;
+var x=0;
 function loadXMLDoc()
 {
 if (window.XMLHttpRequest)
@@ -18,16 +18,15 @@ else
   }
 xmlhttp.onreadystatechange=function()
   {
+  if (xmlhttp.readyState==4 && xmlhttp.status==200){
 	websiteString = xmlhttp.responseText;
-	websites = websiteString.split(',');
-	website = websites[x];
+	websites = websiteString.split('\n');
 	document.getElementById("myDiv").innerHTML = "Test websites history(bottom to top)" + ": ";
 	}
-xmlhttp.open("GET","list_bild.txt",true);
+}	
+xmlhttp.open("GET","list.txt",true);
 xmlhttp.send();
 }
-
-var tr = setInterval(function(){startTest()}, 180000);
 function startTest()
 {
 	//var myVar=setInterval(function(){myFunction()},5000);
@@ -48,25 +47,22 @@ function myFunction()
 	//s=checkTime(s);
 	var loadtime = M+"/"+D+" "+h+":"+m+":"+s;
 
-	if(x < 200)
+	if(x < websites.length)
 	{
-		var website = websites[Math.floor((Math.random() * 100) + 1)%websites.length];
-		//var website = websites[x];
+		//run as random
+		//var website = websites[Math.floor((Math.random() * 100) + 1)%websites.length];
+		var website = websites[x];
 		document.getElementById('myFrame').src = website;
 		var newItem=document.createElement("Div")
-		var textnode=document.createTextNode("#" + x + website + " " + loadtime)
+		var y = x+1;
+		var textnode=document.createTextNode("# " + y + website + " " + loadtime + " " + xmlhttp.status)
 		newItem.appendChild(textnode)
-
 		var list=document.getElementById("myDiv1")
 		list.insertBefore(newItem,list.childNodes[0]);
 		x++;
 	}
 	
 }
-function myStopFunction() 
-	{
-    clearInterval(tr);
-	}
 </script>
 </head>
 <body onload="loadXMLDoc()">
@@ -75,6 +71,6 @@ function myStopFunction()
 <div id="myDiv"></div>
 <div id="myDiv1"></div>
 <button type="button" onclick="startTest()">Start</button>
-<button onclick="myStopFunction()">Stop force trigger</button>
+
 </body>
 </html>
