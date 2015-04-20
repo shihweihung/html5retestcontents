@@ -1,0 +1,43 @@
+<html><head>
+<title>HTML Frames Example - Top Nav</title>
+<style type="text/css">
+body {
+	font-family:verdana,arial,sans-serif;
+	font-size:10pt;
+	margin:10px;
+	background-color:#a08029;
+	}
+</style>
+</head>
+<script type="text/javascript">
+function goURL()
+{
+	var url = document.getElementById('text').value;
+	parent.content.location.href = url;
+}
+function GoURLDeep()
+{
+	var x = 0;
+	var n = document.getElementById('timeInt').value *1000;
+	
+	var array = [];
+	var links = parent.content.document.getElementsByTagName("a");
+	for(var l=0; l<links.length; l++) {
+		array.push(links[l].href);
+		}
+	setInterval(function(){
+	if (x < links.length)
+	{
+		var url = array[x];
+		parent.content.location.href = url;
+		x++;
+	}
+	;}, n);
+}
+</script>
+<body>
+<p>Test url:<input type="text" id="text" value="http://10.11.0.209">
+<button type="button" onclick="goURL()">Go URL</button>
+Time interval:<input type="number" value = "2" id="timeInt" min="2" max="50"> 
+<button type="button" onClick="GoURLDeep()">GO deep!</button>
+</body></html>
